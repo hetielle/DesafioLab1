@@ -1,4 +1,4 @@
-package main.java.desafiolab1.models;
+package desafiolab1.models;
 
 public class Endereco {
     
@@ -9,6 +9,9 @@ public class Endereco {
     private String cep;
     private String numero;
     private String complemento;
+
+    public Endereco(){
+    }
 
     public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,
             String complemento) {

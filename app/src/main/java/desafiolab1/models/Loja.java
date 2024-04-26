@@ -1,21 +1,30 @@
-package main.java.desafiolab1.models;
+package desafiolab1.models;
 
 public class Loja {
 
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
+    private Endereco endereco;
+    private Data dataFundacao;
 
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
+    public Loja(){
+    }
+
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
+        this.endereco = endereco;
+        this.dataFundacao = dataFundacao;
     }
 
-    public void LojaSemSalario(String nome, int quantidadeFuncionarios) {
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = -1;
+        this.endereco = endereco;
+        this.dataFundacao = dataFundacao;
     }
 
     public String getNome() {
@@ -42,10 +51,26 @@ public class Loja {
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Data getDataFundacao() {
+        return dataFundacao;
+    }
+
+    public void setDataFundacao(Data dataFundacao) {
+        this.dataFundacao = dataFundacao;
+    }
+
     @Override
     public String toString() {
         return "Loja [nome=" + nome + ", quantidadeFuncionarios=" + quantidadeFuncionarios + ", salarioBaseFuncionario="
-                + salarioBaseFuncionario + "]";
+                + salarioBaseFuncionario + ", endereco=" + endereco + ", dataFundacao=" + dataFundacao + "]";
     }
 
     public double gastosComSalario(){
@@ -60,16 +85,16 @@ public class Loja {
         }
     }
 
-    public String tamanhoDaLoja(){
+    public char tamanhoDaLoja(){
         int qtdFuncionarios = this.quantidadeFuncionarios;
-        String tamanho = "";
+        char tamanho = '\0';
 
         if (qtdFuncionarios < 10) {
-            tamanho = "P";
+            tamanho = 'P';
         } else if(qtdFuncionarios >= 10 && qtdFuncionarios <= 30){
-            tamanho = "M";
+            tamanho = 'M';
         } else if(qtdFuncionarios >= 31){
-            tamanho = "G";
+            tamanho = 'G';
         }
 
         return tamanho;
