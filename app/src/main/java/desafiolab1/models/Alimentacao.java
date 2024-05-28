@@ -8,13 +8,13 @@ public class Alimentacao extends Loja{
     }
 
     public Alimentacao(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
-            Data dataFundacao, Data dataAlvara) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+            Data dataFundacao, Data dataAlvara, int qtdMax) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, qtdMax);
         this.dataAlvara = dataAlvara;
     }
 
-    public Alimentacao(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao, Data dataAlvara) {
-        super(nome, quantidadeFuncionarios, endereco, dataFundacao);
+    public Alimentacao(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao, Data dataAlvara, int qtdMax) {
+        super(nome, quantidadeFuncionarios, endereco, dataFundacao, qtdMax);
         this.dataAlvara = dataAlvara;
     }
 
